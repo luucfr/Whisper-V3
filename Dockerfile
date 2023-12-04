@@ -3,11 +3,10 @@ FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
 WORKDIR /dst/
 
 RUN apt update
-RUN apt install -y python3-pip git
+RUN apt install -y python3-pip git ffmpeg
 
 RUN pip install --upgrade pip
-RUN pip install ffmpeg 
-RUN pip install ffmpeg-python
+RUN pip install ffmpeg ffmpeg-python
 RUN pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate datasets[audio]
 
 COPY ./mp3/ /dst/mp3/
