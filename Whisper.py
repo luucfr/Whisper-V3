@@ -29,4 +29,6 @@ pipe = pipeline(
 )
 
 result = pipe("./mp3/fr-dict.mp3")
+print(" ")
+print(" ")
 print(result["text"])
