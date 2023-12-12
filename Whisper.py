@@ -28,5 +28,5 @@ pipe = pipeline(
     device=device,
 )
 
-result = pipe("/dst/mp3/fr-dict.mp3")
+result = pipe("./mp3/fr-dict.mp3")
 print(result["text"])

@@ -5,9 +5,7 @@ WORKDIR /dst/
 RUN apt update
 RUN apt install -y python3-pip git ffmpeg
 
-RUN pip install --upgrade pip
-RUN pip install ffmpeg ffmpeg-python
-RUN pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate datasets[audio]
+RUN pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate datasets[audio] ffmpeg ffmpeg-python
 
 COPY ./mp3/ /dst/mp3/
 COPY ./Whisper.py /dst/Whisper.py
