@@ -1,8 +1,8 @@
 version: "3.3"
 services:
-  train-speech:
+  whisper:
     build:
-      context: .
+      context: ./whisper/
     stdin_open: true
     tty: true
     deploy:
@@ -12,4 +12,8 @@ services:
             - driver: nvidia
               device_ids: ['0']
               capabilities: [gpu]
-    #restart: on-failure
+  speech:
+    build:
+      context: ./speech/
+    stdin_open: true
+    tty: true
